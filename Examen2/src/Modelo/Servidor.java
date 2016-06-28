@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import jdk.nashorn.internal.runtime.ListAdapter;
 
 /**
  *
@@ -24,10 +26,12 @@ public class Servidor extends Thread {
     private Thread hilito;
     private int numSocket = 1;
     private ArrayList<Socket> listaDeClientes;
+    private HashMap<String,ArrayList> hashmap;
 
     public Servidor() throws IOException {
         this.server = new ServerSocket(port);
         listaDeClientes = new ArrayList<>();
+        hashmap=new HashMap<>();
     }
 
     public void escuchar() {
