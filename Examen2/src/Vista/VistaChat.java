@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 public class VistaChat extends javax.swing.JFrame {
 
     private Control control;
+    private String nombre;
     public VistaChat() {
         initComponents();
         this.control=new Control(this);
@@ -32,9 +33,16 @@ public class VistaChat extends javax.swing.JFrame {
     public String getjTextNombre() {
         return this.jTextNombre.getText();
     }
+    public String getTextMsg(){
+        return this.jTextMensaje.getText();
+    }
+    
 
-    public JTextField getjTextMensaje() {
-        return jTextMensaje;
+    public void setNombre(){
+        this.nombre=this.jTextNombre.getText();
+    }
+    public String getNombre(){
+        return this.nombre;
     }
 
     public void setjTextMensaje(JTextField jTextMensaje) {
@@ -63,6 +71,9 @@ public class VistaChat extends javax.swing.JFrame {
         jButtonConectar = new javax.swing.JButton();
         jTextNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +87,12 @@ public class VistaChat extends javax.swing.JFrame {
 
         jLabel3.setText("Nombre");
 
+        jRadioButton1.setText("Chat grupal");
+
+        jRadioButton2.setText("Difusión ");
+
+        jRadioButton3.setText("Privado");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,15 +105,24 @@ public class VistaChat extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jButtonEnviar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel3)
-                        .addGap(30, 30, 30)
-                        .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonConectar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jRadioButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonConectar)))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,9 +133,14 @@ public class VistaChat extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonConectar))
-                .addGap(18, 18, 18)
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonEnviar))
@@ -159,6 +190,9 @@ public class VistaChat extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConectar;
     private javax.swing.JButton jButtonEnviar;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextMensaje;

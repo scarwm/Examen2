@@ -15,7 +15,7 @@ import java.net.Socket;
  *
  * @author Scarlett
  */
-public class Cliente extends Thread{
+public class Cliente implements Runnable{
     
     private Socket cliente;
     private DataInputStream entradaSocket;

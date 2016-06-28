@@ -23,6 +23,7 @@ public class Control implements ActionListener {
     private Cliente Cliente;
     private Thread hilo;
     private VistaChat vis;
+    private String nombre;
 
     public Control(VistaChat vista) {
         this.vis = vista;
@@ -37,13 +38,14 @@ public class Control implements ActionListener {
                 this.Cliente = new Cliente(vis);
                 this.hilo=new Thread(Cliente);
                 hilo.start();
+                vis.setNombre();
                 vis.limpiar();
             } catch (IOException ex) {
             }
 
         }if(ae.getActionCommand().equalsIgnoreCase("Enviar")){
-           
-            this.Cliente.enviarMSG(vis.getjTextNombre()+":  "+vis.getjTextMensaje()+"\n");
+            this.nombre=vis.getNombre();
+            this.Cliente.enviarMSG(nombre+":  "+vis.getTextMsg()+"\n");
         }
     }
 
